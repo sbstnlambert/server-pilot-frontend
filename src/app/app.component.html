@@ -4,7 +4,7 @@
 <div class="container-xxl px-0">
 
     <!-- NAVBAR CONTAINER -->
-    <nav class="navbar bg-body-tertiary py-5 mb-5">
+    <nav class="navbar py-5 mb-4 bg-body-secondary">
         <div class="container-fluid">
             <a class="navbar-brand fs-3 text-uppercase fw-bold text-primary-emphasis">Server
                 Pilot</a>
@@ -27,7 +27,7 @@
     </nav>
 
     <!-- FILTER RADIO GROUP BUTTONS -->
-    <div class="d-flex mb-5" role="group" aria-label="Basic radio toggle button group">
+    <div class="d-flex mb-5 pb-4 border-bottom" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
         <label class="btn btn-outline-primary rounded-pill px-4 me-4 text-uppercase fw-semibold"
             for="btnradio1">All</label>
@@ -39,4 +39,173 @@
             for="btnradio3">Operational</label>
     </div>
 
-</div> <!-- PAGE CONTAINER -->
+    <!-- SERVER CARDS LIST -->
+
+    <!-- 
+        IP Address  | Status Logo
+        Status      |
+        -------------------------
+        Name
+        Memory
+        Type
+        Update status (ping)
+        Delete
+
+     -->
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- SERVER CARD -->
+        <div class="col">
+            <div class="card h-100 rounded-0 border-start-0 border-top-0 border-end-0 border-2">
+                <div class="card-body">
+                    <div class="container mb-2">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2 class="card-title m-0">IP Address</h2>
+                                <p class="card-text text-success">Online</p>
+                            </div>
+                            <div class="col text-end">
+                                <i class="bi bi-check-circle-fill text-success fs-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush border-top">
+                        <div class="form-floating mb-3">
+                            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                                placeholder="name@example.com" value="name@example.com">
+                            <label for="floatingPlaintextInput">Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                                placeholder="name@example.com" value="name@example.com">
+                            <label for="floatingPlaintextInput">Type</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                                placeholder="name@example.com" value="name@example.com">
+                            <label for="floatingPlaintextInput">Memory</label>
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-primary" type="button">Ping</button>
+                            <button class="btn btn-danger" type="button">Delete</button>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 rounded-0 border-start-0 border-top-0 border-end-0 border-2">
+                <div class="card-body">
+                    <div class="container mb-2">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2 class="card-title m-0">IP Address</h2>
+                                <p class="card-text text-danger">Offline</p>
+                            </div>
+                            <div class="col text-end">
+                                <i class="bi bi-x-circle-fill text-danger fs-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush border-top">
+                        <div class="form-floating mb-3">
+                            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                                placeholder="name@example.com" value="name@example.com">
+                            <label for="floatingPlaintextInput">Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                                placeholder="name@example.com" value="name@example.com">
+                            <label for="floatingPlaintextInput">Type</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                                placeholder="name@example.com" value="name@example.com">
+                            <label for="floatingPlaintextInput">Memory</label>
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-primary" type="button">Ping</button>
+                            <button class="btn btn-danger" type="button">Delete</button>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 rounded-0 border-start-0 border-top-0 border-end-0 border-2">
+                <div class="card-body">
+                    <div class="container mb-2">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2 class="card-title m-0">IP Address</h2>
+                                <p class="card-text text-success">Online</p>
+                            </div>
+                            <div class="col text-end">
+                                <i class="bi bi-check-circle-fill text-success fs-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush border-top">
+                        <div class="form-floating mb-3">
+                            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                                placeholder="name@example.com" value="name@example.com">
+                            <label for="floatingPlaintextInput">Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                                placeholder="name@example.com" value="name@example.com">
+                            <label for="floatingPlaintextInput">Type</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                                placeholder="name@example.com" value="name@example.com">
+                            <label for="floatingPlaintextInput">Memory</label>
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-primary" type="button">Ping</button>
+                            <button class="btn btn-danger" type="button">Delete</button>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 rounded-0 border-start-0 border-top-0 border-end-0 border-2">
+                <div class="card-body">
+                    <div class="container mb-2">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2 class="card-title m-0">IP Address</h2>
+                                <p class="card-text text-success">Online</p>
+                            </div>
+                            <div class="col text-end">
+                                <i class="bi bi-check-circle-fill text-success fs-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush border-top">
+                        <div class="form-floating mb-3">
+                            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                                placeholder="name@example.com" value="name@example.com">
+                            <label for="floatingPlaintextInput">Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                                placeholder="name@example.com" value="name@example.com">
+                            <label for="floatingPlaintextInput">Type</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                                placeholder="name@example.com" value="name@example.com">
+                            <label for="floatingPlaintextInput">Memory</label>
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-primary" type="button">Ping</button>
+                            <button class="btn btn-danger" type="button">Delete</button>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- PAGE CONTAINER -->
