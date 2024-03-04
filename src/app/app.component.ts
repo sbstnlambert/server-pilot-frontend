@@ -14,8 +14,6 @@ import { Server } from './interface/server';
 export class AppComponent implements OnInit {
   appState$: Observable<AppState<CustomResponse>>;
   readonly DataState = DataState;
-  Status: any;
-  isLoading$: Observable<boolean>;
 
   constructor(private serverService: ServerService) {}
 
