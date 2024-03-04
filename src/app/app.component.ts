@@ -30,22 +30,4 @@ export class AppComponent implements OnInit {
       })
     );
   }
-
-  saveServer(_t77: any) {
-    throw new Error('Method not implemented.');
-  }
-  deleteServer(_t45: Server) {
-    throw new Error('Method not implemented.');
-  }
-  filterStatus$: Observable<unknown>;
-  pingServer(arg0: string) {
-    throw new Error('Method not implemented.');
-  }
-
-  filterServers($event: Event) {
-    throw new Error('Method not implemented.');
-  }
-  printReport() {
-    throw new Error('Method not implemented.');
-  }
 }

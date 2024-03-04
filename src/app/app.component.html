@@ -15,7 +15,7 @@
                         <i class="bi bi-printer"></i>
                     </div>
                 </button>
-                <button class="btn btn-primary rounded-pill" type="button">
+                <button class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#addDeviceModal">
                     <div class="px-4">
                         <span class="pe-2">Add device</span>
                         <i class="bi bi-plus-lg"></i>
@@ -56,7 +56,7 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <!-- SERVER CARD -->
         <div class="col">
-            <div class="card h-100 rounded-0 border-start-0 border-top-0 border-end-0 border-2">
+            <div class="card h-100 rounded-0 border-start-0 border-top-0 border-end-0 border-2 border-success">
                 <div class="card-body">
                     <div class="container mb-2">
                         <div class="row">
@@ -94,7 +94,7 @@
             </div>
         </div>
         <div class="col">
-            <div class="card h-100 rounded-0 border-start-0 border-top-0 border-end-0 border-2">
+            <div class="card h-100 rounded-0 border-start-0 border-top-0 border-end-0 border-2 border-danger">
                 <div class="card-body">
                     <div class="container mb-2">
                         <div class="row">
@@ -207,5 +207,55 @@
                 </div>
             </div>
         </div>
+
+        <!-- ADD DEVICE MODAL -->
+        <div class="modal fade" id="addDeviceModal" tabindex="-1" aria-labelledby="addDeviceModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add device</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group mb-3">
+                            <label>IP</label>
+                            <input type="text" ngModel name="ipAddress" class="form-control rounded" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Name</label>
+                            <input type="text" ngModel name="name" class="form-control rounded" required>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                                <div class="form-group">
+                                    <label>Memory</label>
+                                    <input type="text" ngModel name="memory" class="form-control rounded" required>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                                <div class="form-group">
+                                    <label>Type</label>
+                                    <input type="text" ngModel name="type" class="form-control rounded" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Status</label>
+                            <select name="status" ngModel="SERVER_DOWN" class="form-control rounded" name="status"
+                                required>
+                                <option value="SERVER_UP">SERVER UP</option>
+                                <option value="SERVER_DOWN">SERVER DOWN</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary rounded" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary rounded">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </div> <!-- PAGE CONTAINER -->
