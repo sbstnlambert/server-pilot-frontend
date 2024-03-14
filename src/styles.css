@@ -1,2 +1,32 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #f5f9fb; }
+
+.navbar {
+    background-color: #edf3f6;
+}
+
+.navbar-brand {
+    color: #696969;
+}
+
+.btn-primary {
+    background-color: #15bdf4;
+    border-color: #15bdf4;
+}
+
+.btn-primary:hover {
+    background-color: #15a6f4;
+    border-color: #15a6f4;
+}
+
+.btn-outline-primary {
+    color: #696969;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.btn.btn-outline-primary.rounded-pill.text-uppercase.fw-semibold:hover {
+    color: #84dbf7;
+    border-color: #84dbf7;
+    background-color: #fff;
+  }

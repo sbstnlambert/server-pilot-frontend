@@ -28,4 +28,10 @@ export class AppComponent implements OnInit {
       })
     );
   }
+
+  selectedRadio: string = 'btnradio1';
+
+  updateRadioButtonStyle(id: string): void {
+    this.selectedRadio = id;
+  }
 }
