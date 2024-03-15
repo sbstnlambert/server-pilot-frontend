@@ -69,19 +69,19 @@
                     <!-- SERVER CARD -->
                     <div class="col" *ngFor="let server of appState.appData.data.servers">
                         <div class="card h-100 rounded-0 border-start-0 border-top-0 border-end-0 border-2"
-                            [ngClass]="{ 'border-success': server.status === 'SERVER_UP', 'border-danger': server.status === 'SERVER_DOWN' }">
+                            [ngClass]="[ server.status === Status.SERVER_UP ? ' border-success' : ' border-danger' ]">
                             <div class="card-body">
                                 <div class="container mb-2">
                                     <div class="row">
                                         <div class="col-6">
                                             <h2 class="card-title m-0">{{ server.ipAddress }}</h2>
                                             <p class="card-text"
-                                                [ngClass]="{ 'text-success': server.status === 'SERVER_UP', 'text-danger': server.status === 'SERVER_DOWN' }">
-                                                {{ server.status === 'SERVER_UP' ? 'Online' : 'Offline' }}</p>
+                                                [ngClass]="[ server.status === 'SERVER_UP' ? ' text-success' : 'text-danger' ]">
+                                                {{ server.status === Status.SERVER_UP ? 'Online' : 'Offline' }}</p>
                                         </div>
                                         <div class="col text-end">
                                             <i class="bi fs-1"
-                                                [ngClass]="{ 'bi-check-circle-fill text-success': server.status === 'SERVER_UP', 'bi-x-circle-fill text-danger': server.status === 'SERVER_DOWN' }"></i>
+                                                [ngClass]="[ server.status === Status.SERVER_UP ? ' bi-check-circle-fill text-success' : ' bi-x-circle-fill text-danger']"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -105,7 +105,11 @@
                                         <label for="floatingPlaintextInput">Memory</label>
                                     </div>
                                     <div class="d-grid gap-2 col-6 mx-auto">
-                                        <button class="btn btn-primary" type="button">Ping</button>
+                                        <button (click)="pingServer(server.ipAddress)"
+                                            *ngIf="(filterStatus$ | async) === '' || (filterStatus$ | async) !== server.ipAddress"
+                                            class="btn btn-primary" type="button">Ping</button>
+                                        <i *ngIf="(filterStatus$ | async) === server.ipAddress"
+                                            class="spinner-border text-info mx-auto "></i>
                                         <button class="btn btn-danger" type="button">Delete</button>
                                     </div>
                                 </ul>
