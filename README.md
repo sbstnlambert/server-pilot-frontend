@@ -1,5 +1,7 @@
 :hammer_and_wrench: This app is currently under construction. More details will be added soon.
 
+![Server Pilot Illustration](./src/assets/screenshot/server-pilot.PNG)
+
 # Server Pilot
 
 Server Pilot is a server management application showcasing the use of Java Spring (backend) and Angular (frontend).
