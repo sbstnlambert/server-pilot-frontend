@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
   private dataSubject = new BehaviorSubject<CustomResponse>(null);
   private filterSubject = new BehaviorSubject<string>('');
   filterStatus$ = this.filterSubject.asObservable();
+  private originalServers: any[] = [];
 
   constructor(private serverService: ServerService) {}
 
@@ -33,6 +34,7 @@ export class AppComponent implements OnInit {
     this.appState$ = this.serverService.servers$.pipe(
       map((response) => {
         this.dataSubject.next(response);
+        this.originalServers = response.data.servers;
         return { dataState: DataState.LOADED_STATE, appData: response };
       }),
       startWith({ dataState: DataState.LOADING_STATE }),
@@ -65,6 +67,22 @@ export class AppComponent implements OnInit {
         return of({ dataState: DataState.ERROR_STATE, error: error });
       })
     );
+  }
+
+  filterServers(status: Status): void {
+    const filteredServers = this.originalServers.filter(
+      (server) => status === Status.ALL || server.status === status
+    );
+
+    const filteredResponse: CustomResponse = {
+      ...this.dataSubject.value,
+      data: { servers: filteredServers },
+    };
+
+    this.appState$ = of({
+      dataState: DataState.LOADED_STATE,
+      appData: filteredResponse,
+    });
   }
 
   updateRadioButtonStyle(id: string): void {
